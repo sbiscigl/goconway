@@ -25,7 +25,7 @@ func New(b *board.Board, r *rules.Rules) *Game {
 func (g *Game) Tick() {
 	for {
 		g.GameBoard.Draw()
-		time.Sleep(time.Second)
+		time.Sleep(time.Millisecond * 200)
 		for x, arr := range g.GameBoard.GameBoard {
 			for y := range arr {
 				g.RuleRunner.IsAlive(&g.GameBoard.GameBoard[x][y], g.GameBoard)
