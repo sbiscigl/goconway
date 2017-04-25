@@ -11,9 +11,9 @@ import (
 )
 
 func main() {
-	if len(os.Args) != 3 {
+	if len(os.Args) != 4 {
 		fmt.Println("Usage: ")
-		fmt.Println("conways <Width> <Height>")
+		fmt.Println("conways <Width> <Height> <Percent chance of initial life of cell (out of 100)>")
 		panic(fmt.Sprintf("not enough args"))
 	}
 	w, err := strconv.Atoi(os.Args[1])
@@ -24,7 +24,14 @@ func main() {
 	if err != nil {
 		panic(fmt.Sprintf("height not number"))
 	}
+	chance, err := strconv.Atoi(os.Args[3])
+	if err != nil {
+		panic(fmt.Sprintf("chance not number"))
+	}
+	if chance < 0 || chance > 100 {
+		panic(fmt.Sprintf("chance is not in valid 0 - 100 range"))
+	}
 	b := board.New(w, h)
-	b.Init()
+	b.Init(chance)
 	game.New(b, rules.New()).Tick()
 }

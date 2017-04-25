@@ -31,12 +31,12 @@ func New(w int, h int) *Board {
 }
 
 /*Init gives a 30 percent chance a square lives*/
-func (b *Board) Init() {
+func (b *Board) Init(chance int) {
 	rand.Seed(time.Now().UTC().UnixNano())
 	for x, arr := range b.GameBoard {
 		for y := range arr {
-			a := rand.Intn(9)
-			if a <= 1 {
+			a := rand.Intn(100)
+			if a <= chance {
 				arr[y].Alive = true
 				arr[y].Ypos = x
 				arr[y].Xpos = y
