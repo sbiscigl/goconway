@@ -7,7 +7,7 @@ import (
 	"os/exec"
 	"time"
 
-	"github.com/sbiscigl/conways/cell"
+	"github.com/sbiscigl/goconway/cell"
 )
 
 /*Board type for game board*/

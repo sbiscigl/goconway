@@ -1,8 +1,8 @@
 package rules
 
 import (
-	"github.com/sbiscigl/conways/board"
-	"github.com/sbiscigl/conways/cell"
+	"github.com/sbiscigl/goconway/board"
+	"github.com/sbiscigl/goconway/cell"
 )
 
 /*Rules type for game rules*/

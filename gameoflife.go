@@ -5,15 +5,15 @@ import (
 	"os"
 	"strconv"
 
-	"github.com/sbiscigl/conways/board"
-	"github.com/sbiscigl/conways/game"
-	"github.com/sbiscigl/conways/rules"
+	"github.com/sbiscigl/goconway/board"
+	"github.com/sbiscigl/goconway/game"
+	"github.com/sbiscigl/goconway/rules"
 )
 
 func main() {
 	if len(os.Args) != 4 {
 		fmt.Println("Usage: ")
-		fmt.Println("conways <Width> <Height> <Percent chance of initial life of cell (out of 100)>")
+		fmt.Println("goconway <Width> <Height> <Percent chance of initial life of cell (out of 100)>")
 		panic(fmt.Sprintf("not enough args"))
 	}
 	w, err := strconv.Atoi(os.Args[1])

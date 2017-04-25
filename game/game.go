@@ -3,8 +3,8 @@ package game
 import (
 	"time"
 
-	"github.com/sbiscigl/conways/board"
-	"github.com/sbiscigl/conways/rules"
+	"github.com/sbiscigl/goconway/board"
+	"github.com/sbiscigl/goconway/rules"
 )
 
 /*Game type for a game runner*/
