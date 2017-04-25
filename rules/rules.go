@@ -37,30 +37,30 @@ func (r *Rules) IsAlive(c *cell.Cell, b *board.Board) {
 
 func numberAlive(c cell.Cell, b board.Board) int {
 	alive := 0
-	if c.Xpos-1 >= 0 && b.GameBoard[c.Xpos-1][c.Ypos].Alive == true {
+	if c.Ypos-1 >= 0 && b.GameBoard[c.Ypos-1][c.Xpos].Alive == true {
 		alive++
 	}
-	if c.Xpos-1 >= 0 && c.Ypos-1 >= 0 && b.GameBoard[c.Xpos-1][c.Ypos-1].Alive == true {
+	if c.Ypos-1 >= 0 && c.Xpos-1 >= 0 && b.GameBoard[c.Ypos-1][c.Xpos-1].Alive == true {
 		alive++
 	}
-	if c.Xpos-1 >= 0 && c.Ypos+1 < b.Height && b.GameBoard[c.Xpos-1][c.Ypos+1].Alive == true {
-		alive++
-	}
-
-	if c.Ypos-1 >= 0 && b.GameBoard[c.Xpos][c.Ypos-1].Alive == true {
-		alive++
-	}
-	if c.Ypos+1 < b.Height && b.GameBoard[c.Xpos][c.Ypos+1].Alive == true {
+	if c.Ypos-1 >= 0 && c.Xpos+1 < b.Width && b.GameBoard[c.Ypos-1][c.Xpos+1].Alive == true {
 		alive++
 	}
 
-	if c.Xpos+1 < b.Height && b.GameBoard[c.Xpos+1][c.Ypos].Alive == true {
+	if c.Xpos-1 >= 0 && b.GameBoard[c.Ypos][c.Xpos-1].Alive == true {
 		alive++
 	}
-	if c.Xpos+1 < b.Height && c.Ypos-1 >= 0 && b.GameBoard[c.Xpos+1][c.Ypos-1].Alive == true {
+	if c.Xpos+1 < b.Width && b.GameBoard[c.Ypos][c.Xpos+1].Alive == true {
 		alive++
 	}
-	if c.Xpos+1 < b.Height && c.Ypos+1 < b.Height && b.GameBoard[c.Xpos+1][c.Ypos+1].Alive == true {
+
+	if c.Ypos+1 < b.Height && b.GameBoard[c.Ypos+1][c.Xpos].Alive == true {
+		alive++
+	}
+	if c.Ypos+1 < b.Height && c.Xpos-1 >= 0 && b.GameBoard[c.Ypos+1][c.Xpos-1].Alive == true {
+		alive++
+	}
+	if c.Ypos+1 < b.Height && c.Xpos+1 < b.Width && b.GameBoard[c.Ypos+1][c.Xpos+1].Alive == true {
 		alive++
 	}
 	return alive

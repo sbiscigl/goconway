@@ -7,7 +7,7 @@ import (
 )
 
 func main() {
-	b := board.New(40, 40)
+	b := board.New(40, 140)
 	b.Init()
 	game.New(b, rules.New()).Tick()
 }

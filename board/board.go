@@ -12,16 +12,16 @@ import (
 
 /*Board type for game board*/
 type Board struct {
-	Height    int
 	Width     int
+	Height    int
 	GameBoard [][]cell.Cell
 }
 
 /*New returns new isntance of game board*/
 func New(w int, h int) *Board {
 	board := &Board{
-		Width:     w,
-		Height:    h,
+		Height:    w,
+		Width:     h,
 		GameBoard: make([][]cell.Cell, w),
 	}
 	for i := range board.GameBoard {
@@ -38,12 +38,12 @@ func (b *Board) Init() {
 			a := rand.Intn(9)
 			if a <= 1 {
 				arr[y].Alive = true
-				arr[y].Xpos = x
-				arr[y].Ypos = y
+				arr[y].Ypos = x
+				arr[y].Xpos = y
 			} else {
 				arr[y].Alive = false
-				arr[y].Xpos = x
-				arr[y].Ypos = y
+				arr[y].Ypos = x
+				arr[y].Xpos = y
 			}
 		}
 	}
